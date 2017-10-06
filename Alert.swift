@@ -17,26 +17,24 @@ class Alert {
     alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
   }
 
-  func button(_ title: String, closure: @escaping Closure) -> Alert {
-    let action = UIAlertAction(
-      title: title,
-      style: .default) { _ in
-        closure()
-    }
+  func button(_ title: String,
+              style: UITableViewRowActionStyle? = .default,
+              closure: Closure? = nil) -> Alert {
+    let action = UIAlertAction(title: title, style: .default) { _ in closure?() }
     alertController.addAction(action)
     return self
   }
 
   func show(on viewController: UIViewController? = nil,
             animated: Bool = true,
-            completion: (() -> Void)? = nil) {
+            completion: Closure? = nil) {
     guard let vc = viewController ?? findTopViewController() else { return }
     vc.present(alertController, animated: animated, completion: completion)
   }
 }
 
 extension Alert {
-  static func info(title: String, message: String) -> Alert {
+    static func info(title: String, message: String) -> Alert {
     let alert = Alert(title: title, message: message)
     let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
     alert.alertController.addAction(okAction)
