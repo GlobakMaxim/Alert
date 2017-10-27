@@ -5,6 +5,8 @@
 //  Copyright © 2017 Maxim Globak. All rights reserved.
 //
 
+import UIKit
+
 class Alert {
   typealias Handler = () -> Void
   private var alertController: UIAlertController
@@ -13,15 +15,15 @@ class Alert {
     alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
   }
 
-  func button(title: String, action: Handler?) -> Self {
+  func button(_ title: String, action: Handler?) -> Self {
     return addAction(title: title, style: .default, action: action)
   }
 
-  func cancel(title: String, action: Handler?) -> Self {
+  func cancel(_ title: String, action: Handler?) -> Self {
     return addAction(title: title, style: .cancel, action: action)
   }
 
-  func destructive(title: String, action: Handler?) -> Self {
+  func destructive(_ title: String, action: Handler?) -> Self {
     return addAction(title: title, style: .destructive, action: action)
   }
 
