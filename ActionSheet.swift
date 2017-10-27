@@ -16,15 +16,15 @@ class ActionSheet {
     alertController = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
   }
 
-  func button(_ title: String, action: Handler?) -> Self {
+  func button(_ title: String, action: Handler? = nil) -> Self {
     return addAction(title: title, style: .default, action: action)
   }
 
-  func cancel(_ title: String, action: Handler?) -> Self {
+  func cancel(_ title: String, action: Handler? = nil) -> Self {
     return addAction(title: title, style: .cancel, action: action)
   }
 
-  func destructive(_ title: String, action: Handler?) -> Self {
+  func destructive(_ title: String, action: Handler? = nil) -> Self {
     return addAction(title: title, style: .destructive, action: action)
   }
 
