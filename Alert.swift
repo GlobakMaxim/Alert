@@ -39,7 +39,9 @@ class Alert {
             animated: Bool = true,
             completion: Handler? = nil) {
     guard let vc = viewController ?? findTopViewController() else { return }
-    vc.present(alertController, animated: animated, completion: completion)
+    DispatchQueue.main.async {
+      vc.present(self.alertController, animated: animated, completion: completion)
+    }
   }
 }
 
