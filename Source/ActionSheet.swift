@@ -8,26 +8,26 @@
 import UIKit
 
 class ActionSheet {
+  
   typealias Handler = () -> Void
-
   var alertController: UIAlertController
-
+  
   init(title: String?, message: String?) {
     alertController = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
   }
-
+  
   func button(_ title: String, action: Handler? = nil) -> Self {
     return addAction(title: title, style: .default, action: action)
   }
-
+  
   func cancel(_ title: String, action: Handler? = nil) -> Self {
     return addAction(title: title, style: .cancel, action: action)
   }
-
+  
   func destructive(_ title: String, action: Handler? = nil) -> Self {
     return addAction(title: title, style: .destructive, action: action)
   }
-
+  
   private func addAction(title: String, style: UIAlertAction.Style, action: Handler?) -> Self {
     let action = UIAlertAction(title: title, style: style) { _ in
       action?()
@@ -35,7 +35,7 @@ class ActionSheet {
     alertController.addAction(action)
     return self
   }
-
+  
   func show(on viewController: UIViewController? = nil,
             animated: Bool = true,
             completion: Handler? = nil) {
@@ -53,7 +53,7 @@ extension ActionSheet {
     }
     return findTopViewController(in: rootViewController)
   }
-
+  
   private func findTopViewController(in viewController: UIViewController) -> UIViewController {
     if let navigationController = viewController as? UINavigationController {
       if let visibleViewController = navigationController.visibleViewController {

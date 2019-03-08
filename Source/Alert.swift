@@ -7,26 +7,27 @@
 
 import UIKit
 
-class Alert {
+public class Alert {
+  
   typealias Handler = () -> Void
   private var alertController: UIAlertController
-
+  
   init(title: String, message: String) {
     alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
   }
-
+  
   func button(_ title: String, action: Handler? = nil) -> Self {
     return addAction(title: title, style: .default, action: action)
   }
-
+  
   func cancel(_ title: String, action: Handler? = nil) -> Self {
     return addAction(title: title, style: .cancel, action: action)
   }
-
+  
   func destructive(_ title: String, action: Handler? = nil) -> Self {
     return addAction(title: title, style: .destructive, action: action)
   }
-
+  
   private func addAction(title: String, style: UIAlertAction.Style, action: Handler?) -> Self {
     let action = UIAlertAction(title: title, style: style) { _ in
       action?()
@@ -34,7 +35,7 @@ class Alert {
     alertController.addAction(action)
     return self
   }
-
+  
   func show(on viewController: UIViewController? = nil,
             animated: Bool = true,
             completion: Handler? = nil) {
@@ -52,7 +53,7 @@ extension Alert {
     }
     return findTopViewController(in: rootViewController)
   }
-
+  
   private func findTopViewController(in viewController: UIViewController) -> UIViewController {
     if let navigationController = viewController as? UINavigationController {
       if let visibleViewController = navigationController.visibleViewController {
