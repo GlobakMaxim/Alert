@@ -12,19 +12,19 @@ public class Alert {
   typealias Handler = () -> Void
   private var alertController: UIAlertController
   
-  init(title: String, message: String) {
+  public init(title: String, message: String) {
     alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
   }
   
-  func button(_ title: String, action: Handler? = nil) -> Self {
+  public func button(_ title: String, action: Handler? = nil) -> Self {
     return addAction(title: title, style: .default, action: action)
   }
   
-  func cancel(_ title: String, action: Handler? = nil) -> Self {
+  public func cancel(_ title: String, action: Handler? = nil) -> Self {
     return addAction(title: title, style: .cancel, action: action)
   }
   
-  func destructive(_ title: String, action: Handler? = nil) -> Self {
+  public func destructive(_ title: String, action: Handler? = nil) -> Self {
     return addAction(title: title, style: .destructive, action: action)
   }
   
@@ -36,9 +36,9 @@ public class Alert {
     return self
   }
   
-  func show(on viewController: UIViewController? = nil,
-            animated: Bool = true,
-            completion: Handler? = nil) {
+  public func show(on viewController: UIViewController? = nil,
+                   animated: Bool = true,
+                   completion: Handler? = nil) {
     guard let vc = viewController ?? findTopViewController() else { return }
     DispatchQueue.main.async {
       vc.present(self.alertController, animated: animated, completion: completion)
