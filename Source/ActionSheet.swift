@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ActionSheet {
+public class ActionSheet {
   
   typealias Handler = () -> Void
   var alertController: UIAlertController
