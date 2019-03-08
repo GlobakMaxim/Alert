@@ -8,16 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		030D193A2232F6A9001ECD10 /* SugarAlert.h in Headers */ = {isa = PBXBuildFile; fileRef = 030D19382232F6A9001ECD10 /* SugarAlert.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		030D19422232F7BA001ECD10 /* ActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030D19402232F7BA001ECD10 /* ActionSheet.swift */; };
-		030D19432232F7BA001ECD10 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030D19412232F7BA001ECD10 /* Alert.swift */; };
+		030D19472232FC3F001ECD10 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030D19452232FC3F001ECD10 /* Alert.swift */; };
+		030D19482232FC3F001ECD10 /* ActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030D19462232FC3F001ECD10 /* ActionSheet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		030D19352232F6A9001ECD10 /* SugarAlert.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SugarAlert.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		030D19382232F6A9001ECD10 /* SugarAlert.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SugarAlert.h; sourceTree = "<group>"; };
 		030D19392232F6A9001ECD10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		030D19402232F7BA001ECD10 /* ActionSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActionSheet.swift; path = ../../ActionSheet.swift; sourceTree = "<group>"; };
-		030D19412232F7BA001ECD10 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Alert.swift; path = ../../Alert.swift; sourceTree = "<group>"; };
+		030D19452232FC3F001ECD10 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		030D19462232FC3F001ECD10 /* ActionSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionSheet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,12 +50,21 @@
 		030D19372232F6A9001ECD10 /* SugarAlert */ = {
 			isa = PBXGroup;
 			children = (
-				030D19402232F7BA001ECD10 /* ActionSheet.swift */,
-				030D19412232F7BA001ECD10 /* Alert.swift */,
+				030D19442232FC3F001ECD10 /* Source */,
 				030D19382232F6A9001ECD10 /* SugarAlert.h */,
 				030D19392232F6A9001ECD10 /* Info.plist */,
 			);
 			path = SugarAlert;
+			sourceTree = "<group>";
+		};
+		030D19442232FC3F001ECD10 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				030D19452232FC3F001ECD10 /* Alert.swift */,
+				030D19462232FC3F001ECD10 /* ActionSheet.swift */,
+			);
+			name = Source;
+			path = ../../Source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +146,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				030D19432232F7BA001ECD10 /* Alert.swift in Sources */,
-				030D19422232F7BA001ECD10 /* ActionSheet.swift in Sources */,
+				030D19472232FC3F001ECD10 /* Alert.swift in Sources */,
+				030D19482232FC3F001ECD10 /* ActionSheet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
