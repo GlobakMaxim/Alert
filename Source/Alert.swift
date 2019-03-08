@@ -9,7 +9,7 @@ import UIKit
 
 public class Alert {
   
-  typealias Handler = () -> Void
+  public typealias Handler = () -> Void
   private var alertController: UIAlertController
   
   public init(title: String, message: String) {
