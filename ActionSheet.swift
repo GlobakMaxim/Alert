@@ -28,7 +28,7 @@ class ActionSheet {
     return addAction(title: title, style: .destructive, action: action)
   }
 
-  private func addAction(title: String, style: UIAlertActionStyle, action: Handler?) -> Self {
+  private func addAction(title: String, style: UIAlertAction.Style, action: Handler?) -> Self {
     let action = UIAlertAction(title: title, style: style) { _ in
       action?()
     }
