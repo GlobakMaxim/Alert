@@ -1,5 +1,5 @@
 # Alert
-Syntactic sugar for UIAlertController
+Lightweight helper for working with UIAlertController
 
 # UIAlertController with beautiful API
 
